@@ -77,11 +77,11 @@
 							Sign up now
 						</a>
 					</div>
-					<div class="g-signin2" data-onsuccess="onSignIn"></div>
 				</form>
 			</div>
 		</div>
 	</div>
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
 	<div id="dropDownSelect1"></div>
 	<script src="js/main.js"></script>
 </body>
