@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  	<script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script>
+    function start() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+          client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+  </script>
 	<title>Login V5</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
