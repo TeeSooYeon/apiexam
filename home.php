@@ -1,22 +1,19 @@
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<h1>Welcome User</h1><br/><br/>
+<span>Logged in as <?php echo $_SESSION['user_first_name'] ?> <?php echo $_SESSION['user_last_name'] ?></span>
 
-<meta name="google-signin-client_id" content="345807680937-5ac3lbkn30nom6qn95pa6ib8t6v7n7jv.apps.googleusercontent.com">
-<script>
-		function onSignIn(googleUser) {
-		var profile = googleUser.getBasicProfile();
-		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-		console.log('Name: ' + profile.getName());
-		console.log('Image URL: ' + profile.getImageUrl());
-		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-		}
-</script>
-HENLO <br/>
-<a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
+<div style="background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;">
+  <img src="<?php echo $_SESSION["user_image"] ?>" alt="profile pic" style="width:100%">
+  <div style="text-align: center;
+  padding: 10px 20px;">
+  <h1>Profile Picture</h1>
+  </div>
+</div>
+<h1>Name: <?php echo $_SESSION['user_first_name'] ?> <?php echo $_SESSION['user_last_name'] ?></h1>
+<h1>Email: <?php echo $_SESSION['user_email_address'] ?></h1>
+
+<h1><a href="logout.php">Logout</a></h1>

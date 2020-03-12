@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php 
 $navigation = (isset($_GET['navigation']) && $_GET['navigation'] != '') ? $_GET['navigation']: '';
 
@@ -29,45 +30,24 @@ if(isset($_GET["code"])){
   }
  }
 }
-if(!isset($_SESSION['access_token'])){
- $login_button = '<br><a href="'.$google_client->createAuthUrl().'"><img style="" src="images/google.png" /></a>';
-}
 
 ?>
-<html> 
-    <head>
-      <title>Login</title>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	  	<link rel="stylesheet" type="text/css" href="css/util.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-    </head>
-    <body>
-      <div>
-        <a href="index.php">Home</a>
-        <a href="index.php?navigation=main">Menu</a>
-        <a href="index.php?navigation=home">Profile</a>
-      </div>
-
-        <div>
-        <?php
-        if($login_button == '')
-        {
-          switch($navigation){
-            case 'main':
-              require_once 'index.php';
-              break;
-			case 'home':
-			  require_once 'home.php';
-              break;
-            default:
-              require_once 'index.php';
-              break;
-          }
-        }
-        else
-        {
-          echo '<div class="limiter">
-		<div class="container-login100" style="background-image: url("images/bg-01.jpg");">
+<html lang="en">
+<head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  	<script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<title>Login V5</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-signin-client_id" content="345807680937-5ac3lbkn30nom6qn95pa6ib8t6v7n7jv.apps.googleusercontent.com">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
 				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="apiexamsnh.herokuapp.com/home.php">
 					<span class="login100-form-title p-b-53">
@@ -77,11 +57,11 @@ if(!isset($_SESSION['access_token'])){
 						<i class="fa fa-facebook-official"></i>
 						Facebook
 					</a>
-					'.
+					<?php
 						if(!isset($_SESSION['access_token'])){
 							$login_button = '<a href="'.$google_client->createAuthUrl().'" class="btn-google m-b-20"><img src="images/icons/icon-google.png" alt="GOOGLE"/>Google</a>';
 						}
-					.'
+					?>
 					<div class="p-t-31 p-b-9">
 						<span class="txt1">
 							Username
@@ -122,11 +102,6 @@ if(!isset($_SESSION['access_token'])){
 		</div>
 	</div>
 	<div id="dropDownSelect1"></div>
-	<script src="js/main.js"></script>';
-        }
-        ?>
-        </div>
-      <div>
-      </div>
-    </body>
+	<script src="js/main.js"></script>
+</body>
 </html>
