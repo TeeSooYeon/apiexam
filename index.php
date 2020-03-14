@@ -34,7 +34,7 @@ if(!isset($_SESSION['access_token'])){
  $login_button = '<br><a href="'.$google_client->createAuthUrl().'" class="btn-google m-b-20"><img src="images/icons/icon-google.png" alt="GOOGLE">Google</a>';
 }
 
-////FACEBOOK////
+//Facebook
 
 $facebook_output = '';
 
@@ -83,9 +83,8 @@ if(isset($_GET['code']))
 else
 {
  // Get login url
-    $facebook_permissions = ['email']; // Optional permissions
 
-    $facebook_login_url = $facebook_helper->getLoginUrl('https://apiexamsnh.herokuapp.com/', $facebook_permissions);
+    $facebook_login_url = $facebook_helper->getLoginUrl('https://apiexamsnh.herokuapp.com/');
     
     // Render Facebook login button
     $facebook_login_url = '<a href="'.$facebook_login_url.'" class="btn-face m-b-20"><i class="fa fa-facebook-official"></i>Facebook</a>';
