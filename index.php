@@ -1,5 +1,5 @@
 <?php 
-$navigation = (isset($_GET['navigation']) && $_GET['navigation'] != '') ? $_GET['navigation']: '';
+$page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page']: '';
 
 include('config.php');
 
@@ -44,8 +44,9 @@ if(!isset($_SESSION['access_token'])){
     <body>
       <div>
         <a href="index.php">Home</a>
-        <a href="index.php?navigation=main">Menu</a>
-        <a href="index.php?navigation=home">Profile</a>
+        <a href="index.php?page=main">Menu</a>
+        <a href="index.php?page=home">Profile</a>
+	<a href="index.php?page=logout">Logout</a>
       </div>
 	  <div>
 	  <?php
