@@ -55,9 +55,12 @@ if(!isset($_SESSION['access_token'])){
             case 'main':
               require_once 'index.php';
               break;
-			case 'home':
-			  require_once 'home.php';
+	    case 'home':
+	      require_once 'home.php';
               break;
+	    case 'logout':
+	      require_once 'logout.php';
+	      break;
             default:
               require_once 'index.php';
               break;
