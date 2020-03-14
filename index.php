@@ -52,7 +52,7 @@ if(!isset($_SESSION['access_token'])){
 	  <?php
         if($login_button == '')
         {
-          switch($navigation){
+          switch($page){
             case 'main':
               require_once 'index.php';
               break;
