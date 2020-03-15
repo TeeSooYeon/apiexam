@@ -41,12 +41,12 @@ include('google_config/google_read.php');
           }
         }
 		else{
-          header("location: index.php?page=login");
+          echo $login_button;
         }
 		?>
 		<?php
 		if(isset($facebook_login_url)){
-            header("location: index.php?page=login");
+           echo $facebook_login_url;
          }
 		else{
 			switch($page){
