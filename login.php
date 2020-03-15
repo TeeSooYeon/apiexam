@@ -1,4 +1,9 @@
 <html>
+<head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	  	<link rel="stylesheet" type="text/css" href="css/util.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
 <div class="limiter">
 		<div class="container-login100" style="background-image: url("images/bg-01.jpg");">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">

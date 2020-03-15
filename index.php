@@ -1,7 +1,6 @@
 <?php 
 $page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page']: '';
 
-include('login.php');
 include('google_config/google_read.php');
 
   if($login_button == true){
@@ -11,7 +10,7 @@ include('google_config/google_read.php');
 ?>
 <html> 
     <head>
-      <title>Login</title>
+      <title>Movies API</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	  	<link rel="stylesheet" type="text/css" href="css/util.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -21,7 +20,6 @@ include('google_config/google_read.php');
         <a href="index.php">Home</a>
         <a href="index.php?page=main">Menu</a>
         <a href="index.php?page=home">Profile</a>
-	<a href="index.php?page=logout">Logout</a>
       </div>
 	  <div>
 	  <?php
@@ -34,9 +32,6 @@ include('google_config/google_read.php');
 	    case 'home':
 	      require_once 'home.php';
               break;
-	    case 'logout':
-	      require_once 'logout.php';
-	      break;
 		case 'login':
 	      require_once 'login.php';
 	      break;
@@ -48,6 +43,8 @@ include('google_config/google_read.php');
 		else{
           header("location: index.php?page=login");
         }
+		?>
+		<?php
 		if(isset($facebook_login_url)){
             header("location: index.php?page=login");
          }
@@ -59,9 +56,6 @@ include('google_config/google_read.php');
 	    case 'home':
 	      require_once 'home.php';
               break;
-	    case 'logout':
-	      require_once 'logout.php';
-	      break;
 		case 'login':
 	      require_once 'login.php';
 	      break;
