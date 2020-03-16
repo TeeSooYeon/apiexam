@@ -36,7 +36,7 @@ include('google_config/google_read.php');
 	      require_once 'login.php';
 	      break;
             default:
-              require_once 'index.php';
+              require_once 'home.php';
               break;
           }
         }
@@ -44,6 +44,7 @@ include('google_config/google_read.php');
           echo $login_button;
         }
 		?>
+		<br/>
 		<?php
 		if(isset($facebook_login_url)){
            echo $facebook_login_url;
@@ -60,7 +61,7 @@ include('google_config/google_read.php');
 	      require_once 'login.php';
 	      break;
             default:
-              require_once 'index.php';
+              require_once 'home.php';
               break;
           }
 			}
